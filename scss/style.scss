@@ -1,6 +1,8 @@
 // Variables
 @import 'variables';
 
+* {box-sizing: border-box;}
+
 body{
 font-family: $font-family-sans-serif;
 color: $body-color;
@@ -12,7 +14,9 @@ margin: 0;
     display:flex;
     justify-content:space-between;
     border-bottom:1px solid $text-ee;
-    box-shadow: inset 1px -2px 0 0 $red;
+    -moz-box-shadow: 0 0 5px 5px #888;
+-webkit-box-shadow: 0 0 5px 5px#888;
+box-shadow: inset 0px -1px 2px 0px $red;
 }
 
 #toolbar a {
@@ -54,14 +58,55 @@ h1{
 }
 
 .header {
-    height: 320px;
-}
+    object-fit: cover;}
 
 .header .headerImg{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
     background-color: $body-color;
-    height: 100%;
+    width: 100%;
     position: relative;
+}
+
+.header >img{
+  width:100%;
+  
+
+}
+
+.box
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+.box .widget
+{
+    height: 300px;
+    border: 2px solid $orange;
+    border-radius: 5px;
+    padding: 1em;
+    flex: 1 1 320px;
+    background-color: $blue;
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .portfolio .widget
+{
+    height: 300px;
+    border: 2px solid $red;
+    border-radius: 5px;
+    padding: 1em;
+    background-color: $black;
+}
+
+#footer{
+    margin-bottom: 3em;
 }
